@@ -1,0 +1,23 @@
+kafka:
+  brokers: 
+    - 192.168.202.50:19092
+  host: 192.168.202.50
+  port: 19092
+  topic: email.outbox
+  groupID: email.group
+
+
+db:
+  driver: postgres
+  host: 192.168.202.12
+  port: 5432
+  user: postgres
+  password: 0133vfhb,jh25
+  name: seaport_TEST
+  table_email: email_outbox
+  notify_channels: [send_email]
+
+logger:
+  grpc_address: host.docker.internal:50051
+  fallback_path: ./logs/fallback.log
+  service_name: seaport_db_listener

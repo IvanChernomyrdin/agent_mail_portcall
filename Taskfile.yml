@@ -1,0 +1,11 @@
+version: '3'
+
+tasks:
+  start:
+    desc: "Start the application"
+    cmds:
+      - ./cmd/listener/listener.exe --config=./config/local.yaml
+  test:
+    desc: "Start all tests"
+    cmds: 
+      - go test -v ./...
